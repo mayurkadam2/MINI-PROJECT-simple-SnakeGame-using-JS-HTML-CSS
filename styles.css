@@ -1,0 +1,211 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+main{
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
+:root {
+    /* button colors */
+    --btn-bg: rgb(152, 81, 205);
+    --btn-bottom-border: rgb(187, 108, 209);
+    --btn-top-border: rgb(135, 67, 199);
+    --btn-shadow: rgb(93, 40, 167);
+
+    /* Background Color */
+    --bg-primary-color: #0e0e0e;
+    --bg-fill-color: #06D001;
+    --bg-head-color: rgb(0, 126, 17);
+    --bg-food-color: rgb(255, 0, 76);
+
+    /* Text Color */
+    --text-primary-color: #63f900;
+    --text-imp-color:rgb(255,0,76);
+
+    /* spacing variables */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 48px;
+
+    /* border colors */
+    --border-primary-color: #333333;
+
+    /* border radius  */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --border-radius-2xl: 24px;
+
+    /* boxSize */
+    --box-dimention: 40px;
+
+    /* width and heigh of game area */
+    --game-width: 540px;
+    --game-height: 540px;
+}
+
+html {
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1e1e13;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+
+}
+
+.modal .start-game,
+.modal .restart-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+
+    background-color: rgba(67, 67, 67, 0);
+    /* background-color: red; */
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-md);
+    box-shadow: 0px 0px 10px var(--bg-fill-color);
+    
+}
+
+.modal .restart-game{
+    display: none;
+}
+
+.btn>*{
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    background-color:#04d00100;
+    border: none;
+    cursor: pointer;
+}
+.btn {
+    
+    height: 2em;
+    width: 5em;
+    background: none;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xs);
+    
+    background-color: var(--btn-bg);
+    border: 2px solid var(--btn-top-border);
+    border-bottom: 2px solid var(--btn-bottom-border);
+    box-shadow: 0px 0px 25px var(--btn-shadow);
+    
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    
+}
+.btn:active{
+    transform: scale(0.95);
+    transform: translateY(0.3em);
+}
+
+
+
+section {
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    /* background-color: red; */
+    gap: var(--space-lg);
+}
+
+section .infos {
+    /* height: var(--game-height); */
+    margin: 0 auto;
+    width: var(--game-width);
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.board {
+
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    /* height:70vh; */
+    height: var(--game-height);
+    width: var(--game-width);
+    margin: 0px auto;
+    /* background-color: red; */
+    /* flex grow means: cover all available space in parent */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--box-dimention), 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(var(--box-dimention), 1fr));
+}
+
+.box {
+    width: var(--box-dimention);
+    height: var(--box-dimention);
+    border: 1px solid var(--border-primary-color);
+    /* background-color: #000000; */
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fill {
+    background-color: var(--bg-fill-color);
+    border: 1px solid var(--bg-fill-color);
+    border-radius: 20%;
+}
+
+.head {
+    background-color: var(--bg-head-color);
+    border: 1px solid var(--bg-head-color);
+    
+}
+
+.food {
+    background-color: var(--bg-food-color);
+    /* border: 1px solid var(--bg-food-color); */
+    /* border: 1px solid var(--border-primary-color); */
+    border-radius: 50%;
+    transform: scale(0.5);
+}
+
+#high-score , #score, #time{
+    color: var(--text-imp-color);
+}
