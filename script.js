@@ -4,6 +4,8 @@ const restartButton = document.querySelector(".btn-restart");
 const modal = document.querySelector(".modal");
 const startgameModal = document.querySelector(".start-game");
 const gameOverModal = document.querySelector(".restart-game");
+const instructionBoard = document.querySelector(".welcome-board");
+const instructionCloseBtn = document.querySelector(".instruction-close");
 
 const highScoreElement = document.querySelector("#high-score");
 const scoreElement = document.querySelector("#score");
@@ -67,12 +69,14 @@ function render() {
     }
 
 
-
+    //coliltion to boundries
     if (head.x < 0 || head.x > cols - 1 || head.y < 0 || head.y > rows - 1) {
         // alert("Game Over");
         clearInterval(intervalId);
         modal.style.display = "flex";
         startgameModal.style.display = "none";
+        instructionBoard.style.display = "none";
+
         gameOverModal.style.display = "flex";
     }
 
@@ -136,6 +140,10 @@ startButton.addEventListener('click', () => {
 
 
 restartButton.addEventListener('click', restartGame);
+
+instructionCloseBtn.addEventListener('click', () =>{
+    instructionBoard.style.display = 'none';
+})
 
 function restartGame() {
     blocks[`${food.x}-${food.y}`].classList.remove("food");
