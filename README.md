@@ -97,10 +97,8 @@ MINI-PROJECT-simple-SnakeGame-using-JS-HTML-CSS/
 
 Building this project helped me practice and understand:
 
-- **HTML5 Canvas API** — Drawing shapes and updating them in real time
 - **Game Loop** — Using `setInterval` to continuously redraw the game state
 - **Keyboard Events** — Listening to `keydown` events for player input
-- **Collision Detection** — Checking if the snake's head overlaps with walls or its own body
 - **Array Manipulation** — Managing the snake's body as an array of positions
 - **DOM Manipulation** — Updating the score display dynamically
 
